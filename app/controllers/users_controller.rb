@@ -24,6 +24,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if @user.update(user_params)
+      redirect_to user_path(@user), success: 'ユーザーを登録しました'
+    else
+      flash.now[:danger] = 'ユーザーの登録に失敗しました'
+      render :edit
+    end
+  end
+
   private
 
   def set_user
