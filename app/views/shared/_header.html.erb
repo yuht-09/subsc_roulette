@@ -4,9 +4,14 @@
       <span class="text-white fa-2x">サブスクルーレット</span>
     <% end %>
     
-    <%= link_to user_path(current_user), class: 'd-flex me-3 text-light' do %>
-      <i class="fa-solid fa-circle-user fa-2x me-1"></i>
-      <span class="fa-pull-left"><%= current_user.name %></span>
-    <% end %> 
-    
+    <% if logged_in? %>
+      <%= link_to user_path(current_user), class: 'd-flex me-3 text-light' do %>
+        <i class="fa-solid fa-circle-user fa-2x me-1"></i>
+        <span class="fa-pull-left"><%= current_user.name %></span>
+      <% end %> 
+    <% else %>
+      <%= link_to login_path, class: 'd-flex me-3 text-light' do %>
+        <span>ログイン</span>
+      <% end %>
+    <% end %>  
 </nav>

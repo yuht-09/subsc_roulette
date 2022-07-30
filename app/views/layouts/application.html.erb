@@ -11,11 +11,7 @@
   </head>
 
   <body class="bg-dark text-white">
-  <% if logged_in? %>
-      <%= render 'shared/header' %>
-    <% else %>
-      <%= render 'shared/before_login_header' %>
-    <% end %>
+    <%= render 'shared/header' %>
   <div class="container">
     <%= yield %>
   </div>
