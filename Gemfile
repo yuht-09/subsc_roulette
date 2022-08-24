@@ -66,8 +66,8 @@ gem 'dotenv-rails'
 
 gem 'sorcery'
 
-gem 'net-smtp', '0.3.1'
+gem 'net-smtp', require: false
 
-gem 'net-pop', '0.1.1'
+gem 'net-pop', require: false
 
-gem 'net-imap', '0.2.2'
+gem 'net-imap', require: false
