@@ -117,7 +117,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     mysql2 (0.5.4)
-    net-imap (0.2.3)
+    net-imap (0.2.2)
       digest
       net-protocol
       strscan
@@ -270,9 +270,9 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.2)
   mysql2 (>= 0.4.4)
-  net-imap
-  net-pop
-  net-smtp
+  net-imap (= 0.2.2)
+  net-pop (= 0.1.1)
+  net-smtp (= 0.3.1)
   pg
   psych (~> 3.1)
   puma (~> 4.1)
