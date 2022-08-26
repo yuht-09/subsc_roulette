@@ -6,7 +6,7 @@
     
     <% if logged_in? %>
       <%= link_to user_path(current_user), class: 'd-flex me-3 text-light' do %>
-        <i class="fa-solid fa-circle-user fa-2x me-1"></i>
+        <i class="fas fa-user-circle fa-2x me-1"></i>
         <span class="fa-pull-left"><%= current_user.name %></span>
       <% end %> 
     <% else %>
