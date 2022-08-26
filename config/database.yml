@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: subsc_roulette_production
-  username: subsc_roulette
-  password: <%= ENV['SUBSC_ROULETTE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
