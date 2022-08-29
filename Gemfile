@@ -72,4 +72,4 @@ gem 'net-pop'
 
 gem 'net-imap'
 
-gem 'themoviedb-api', '1.3.0'
+gem 'themoviedb-api', '~> 1.3'
