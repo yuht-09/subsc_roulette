@@ -1,0 +1,21 @@
+<table class="access-log-table table text-white">
+  <thead>
+    <tr>
+      <th>request_id</th>
+      <th>path</th>
+      <th>status</th>
+      <th>duration</th>
+      <th>error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @access_logs.to_a.each do |access_log| %>
+      <tr>
+        <td><%= access_log.id %></td>
+        <td><%= access_log.name %></td>
+        <td><%= access_log.overview %></td>
+        <td><%= image_tag "https://image.tmdb.org/t/p/w1280/#{access_log.poster_path}", height: '100px' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
