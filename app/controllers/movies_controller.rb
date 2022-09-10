@@ -1,7 +1,10 @@
 class MoviesController < ApplicationController
   def index
-    access_logs = Movie.all.shuffle
-    @access_logs = [access_logs.first]
+    hulu = Movie.hulu.shuffle
+    @hulu = [hulu.first]
+
+    netflex = Movie.netflex.shuffle
+    @netflex = [netflex.first]
   end
 
   def show

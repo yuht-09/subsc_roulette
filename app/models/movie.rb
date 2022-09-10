@@ -17,9 +17,14 @@ class Movie
   attribute :vote_count, :integer
 
   class << self
-    def all
-      TmdbApi.search
+    def netflex
+      TmdbApi.netflex
     end
+
+    def hulu
+      TmdbApi.hulu
+    end
+
   end
 
 end

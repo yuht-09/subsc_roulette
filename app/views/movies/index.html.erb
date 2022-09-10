@@ -9,13 +9,24 @@
     </tr>
   </thead>
   <tbody>
-    <% @access_logs.to_a.each do |access_log| %>
-      <tr>
-        <td><%= access_log.id %></td>
-        <td><%= access_log.name %></td>
-        <td><%= access_log.overview %></td>
-        <td><%= image_tag "https://image.tmdb.org/t/p/w1280/#{access_log.poster_path}", height: '100px' %></td>
-      </tr>
+    <% if @hulu %>
+      <% @hulu.each do |access_log| %>
+        <tr>
+          <td><%= access_log.id %></td>
+          <td><%= access_log.name %></td>
+          <td><%= access_log.overview %></td>
+          <td><%= image_tag "https://image.tmdb.org/t/p/w1280/#{access_log.poster_path}", height: '100px' %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <% @netflex.each do |access_log| %>
+        <tr>
+          <td><%= access_log.id %></td>
+          <td><%= access_log.name %></td>
+          <td><%= access_log.overview %></td>
+          <td><%= image_tag "https://image.tmdb.org/t/p/w1280/#{access_log.poster_path}", height: '100px' %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
