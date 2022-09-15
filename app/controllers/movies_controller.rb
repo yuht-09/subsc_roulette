@@ -1,10 +1,7 @@
 class MoviesController < ApplicationController
   def index
-    hulu = Movie.hulu.shuffle
-    @hulu = [hulu.first]
-
-    netflex = Movie.netflex.shuffle
-    @netflex = [netflex.first]
+    movie = Movie.all(params).shuffle
+    @movie = [movie.first]
   end
 
   def show
