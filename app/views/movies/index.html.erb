@@ -9,12 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    <% @movie.each do |access_log| %>
+    <% @movie.each do |movie| %>
       <tr>
-        <td><%= access_log.id %></td>
-        <td><%= access_log.name %></td>
-        <td><%= access_log.overview %></td>
-        <td><%= image_tag "https://image.tmdb.org/t/p/w1280/#{access_log.poster_path}", height: '100px' %></td>
+        <td><%= movie.id %></td>
+        <td><%= movie.name %></td>
+        <td><%= movie.overview %></td>
+        <td><%= image_tag "https://image.tmdb.org/t/p/w1280/#{movie.poster_path}", height: '100px' %></td>
       </tr>
     <% end %>
   </tbody>
