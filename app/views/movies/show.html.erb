@@ -1,0 +1,9 @@
+<table>
+<% @netflex.each do |result| %>
+    <tr>
+    <td><%= result["id"] %></td>
+    <td><%= result["name"] %></td>
+    <td><%= result["poster_path"] %></td>
+    </tr>
+<% end %>
+</table>
