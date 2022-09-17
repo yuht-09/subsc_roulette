@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    movie = Movie.all(params).shuffle
-    @movies = [movie.first]
+    @movies = Movie.all(params).sample(1)
   end
 
   def show
