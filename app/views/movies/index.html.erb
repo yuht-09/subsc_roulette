@@ -1,0 +1,21 @@
+<table class="access-log-table table text-white">
+  <thead>
+    <tr>
+      <th>request_id</th>
+      <th>path</th>
+      <th>status</th>
+      <th>duration</th>
+      <th>error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.id %></td>
+        <td><%= movie.name %></td>
+        <td><%= movie.overview %></td>
+        <td><%= image_tag "https://image.tmdb.org/t/p/w1280/#{movie.poster_path}", height: '100px' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
