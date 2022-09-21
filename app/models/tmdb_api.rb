@@ -8,7 +8,6 @@ class TmdbApi
       uri = URI.parse("https://api.themoviedb.org/3/discover/tv?api_key=#{ENV['API_KEY']}&language=ja-JP&#{provider}&#{genre}")
       json = Net::HTTP.get(uri)
       data_list = JSON.parse(json)
-      movie = []
       uri = URI.parse("https://api.themoviedb.org/3/discover/tv?api_key=#{ENV['API_KEY']}&language=ja-JP&#{provider}&#{genre}&page=#{rand(data_list['total_pages'])+1}")
       json = Net::HTTP.get(uri)
       data_list = JSON.parse(json)
