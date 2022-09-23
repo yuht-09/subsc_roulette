@@ -10,6 +10,14 @@
             <h5 class="card-title text-center"><%= @movies.name %></h5>
               <p class="card-text text-center"><%= @movies.overview %></p>
               <p class="card-text text-center"><small class="text-muted"><%= @movies.id %></small></p>
+              <div class="d-flex align-items-center justify-content-center">
+                <div class="like" style="width: 70px;">
+                <%= link_to "#", class: "text-white" do %>
+                  <i class="fas fa-plus fa-5x"></i>
+                  <span class="fa-pull-left">気になる</span>
+                <% end %>
+                </div>
+              </div>
           </div>
         </div>
       </div>
