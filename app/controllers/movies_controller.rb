@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all(params).sample(1)
+    @movies = Movie.all(params).sample
   end
 
   def show
