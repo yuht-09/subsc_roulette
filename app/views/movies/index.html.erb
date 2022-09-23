@@ -1,21 +1,26 @@
-<table class="access-log-table table text-white">
-  <thead>
-    <tr>
-      <th>request_id</th>
-      <th>path</th>
-      <th>status</th>
-      <th>duration</th>
-      <th>error</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.id %></td>
-        <td><%= movie.name %></td>
-        <td><%= movie.overview %></td>
-        <td><%= image_tag "https://image.tmdb.org/t/p/w1280/#{movie.poster_path}", height: '100px' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="card mb-3 mt-5 bg-dark text-white bg-opacity-75">
+      <div class="row g-0">
+        <div class="col-md-6">
+          <%= image_tag "https://image.tmdb.org/t/p/w1280/#{@movies.poster_path}", class: "card-img" %>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title text-center"><%= @movies.name %></h5>
+            <p class="card-text text-center"><%= @movies.overview %></p>
+            <p class="card-text text-center"><small class="text-muted"><%= @movies.id %></small></p>
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="like" style="width: 70px;">
+                <%= link_to "#", class: "text-white" do %>
+                  <i class="fas fa-plus fa-5x"></i>
+                  <span class="fa-pull-left">気になる</span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>
