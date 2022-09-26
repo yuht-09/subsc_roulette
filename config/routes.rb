@@ -11,4 +11,8 @@ Rails.application.routes.draw do
 
   get 'netflex', to: 'movies#netflex'
   get 'hulu', to: 'movies#hulu'
+
+  resources :movies do
+    resource :likes, only: [:create, :destroy]
+  end
 end
