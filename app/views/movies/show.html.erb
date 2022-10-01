@@ -1,9 +1,22 @@
-<table>
-<% @netflex.each do |result| %>
+<table class="access-log-table table text-white">
+  <thead>
     <tr>
-    <td><%= result["id"] %></td>
-    <td><%= result["name"] %></td>
-    <td><%= result["poster_path"] %></td>
+      <th>id</th>
+      <th>title</th>
+      <th>overview</th>
+      <th>poster</th>
     </tr>
-<% end %>
+  </thead>
+  <tbody>
+  <% if @mark.present? %>
+    <% @mark.each do |result| %>
+        <tr>
+        <td><%= result["id"] %></td>
+        <td><%= result["original_name"] %></td>
+        <td><%= result["overview"] %></td>
+        <td><%= image_tag "https://image.tmdb.org/t/p/w1280/#{result["poster_path"]}", height: '100px' %></td>
+        </tr>
+    <% end %>
+  <% end %>
+ </tbody>
 </table>

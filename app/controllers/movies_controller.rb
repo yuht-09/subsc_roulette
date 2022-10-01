@@ -5,9 +5,15 @@ class MoviesController < ApplicationController
   end
 
   def show
-    uri = URI.parse("https://api.themoviedb.org/3/discover/tv?api_key=#{ENV['API_KEY']}&language=ja-JP&with_networks=213&with_genres=16|35&page=1")
-    json = Net::HTTP.get(uri)
-    result = JSON.parse(json)
-    @netflex = result["results"]
+    @bookmark = Like.where(user_id: current_user.id).order(created_at: :desc).pluck(:movie_id)
+    @mark = []
+    @bookmark.map do |id|
+      uri = URI.parse("https://api.themoviedb.org/3/tv/#{id}?api_key=#{ENV['API_KEY']}&language=ja-JP")
+      json = Net::HTTP.get(uri)
+      result = JSON.parse(json)
+      ppp = result
+      @mark += [ppp]
+    end
+    
   end
 end
