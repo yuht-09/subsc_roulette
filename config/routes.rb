@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'bookmark', to: 'movies#show'
 
+  get 'bookmark_show', to: 'movies#bookmark_show'
 
   get 'netflex', to: 'movies#netflex'
   get 'hulu', to: 'movies#hulu'
