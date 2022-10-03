@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  def index
+  def show
     @movies = Movie.all(params).sample
     @movie_id = @movies.id
   end

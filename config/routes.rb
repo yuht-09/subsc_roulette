@@ -7,13 +7,13 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
-  get 'show', to: 'movies#index'
+  get 'show', to: 'movies#show'
 
   get 'likes', to: 'movies#likes'
 
   get 'like_movies', to: 'movies#like_movies'
 
-  get 'netflex', to: 'movies#netflex'
+  get 'netflix', to: 'movies#netflix'
   get 'hulu', to: 'movies#hulu'
 
   resources :movies do
