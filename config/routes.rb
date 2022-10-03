@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
   get 'show', to: 'movies#index'
 
-  get 'bookmark', to: 'movies#show'
+  get 'likes', to: 'movies#likes'
 
-  get 'bookmark_show', to: 'movies#bookmark_show'
+  get 'like_movies', to: 'movies#like_movies'
 
   get 'netflex', to: 'movies#netflex'
   get 'hulu', to: 'movies#hulu'
