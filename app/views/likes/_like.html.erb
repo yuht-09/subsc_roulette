@@ -1,0 +1,11 @@
+<% if Like.exists?(user_id: current_user.id, movie_id: @movie_id) %>
+  <%= link_to movie_likes_path(movie_id: @movie_id), class: "text-white", method: :delete, remote: true do %>
+    <i class="fas fa-check fa-5x"></i>
+    <span class="fa-pull-left">気になる</span>
+  <% end %>
+<% else %>
+  <%= link_to movie_likes_path(movie_id: @movie_id),  class: "text-white", method: :post, remote: true do %>
+    <i class="fas fa-plus fa-5x"></i>
+    <span class="fa-pull-left">気になる</span>
+  <% end %>
+<% end %>
