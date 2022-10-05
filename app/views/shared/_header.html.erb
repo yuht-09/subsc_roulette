@@ -1,13 +1,14 @@
-<nav class="navbar navbar-light bg-dark">
+<nav class="sticky-top shadow navbar navbar-light bg-dark">
 
     <%= link_to root_path, class:"navbar-brand ms-3" do %>
+      <i class="fas fa-random text-white fa-2x"></i>
       <span class="text-white fa-2x">サブスクルーレット</span>
     <% end %>
     
     <% if logged_in? %>
-      <%= link_to user_path(current_user), class: 'd-flex me-3 text-light' do %>
+      <%= link_to user_path(current_user), class: 'navbar-brand d-flex align-items-center me-3 text-light' do %>
         <i class="fas fa-user-circle fa-2x me-1"></i>
-        <span class="fa-pull-left"><%= current_user.name %></span>
+        <span><%= current_user.name %></span>
       <% end %> 
     <% else %>
       <%= link_to login_path, class: 'd-flex me-3 text-light' do %>
