@@ -7,7 +7,7 @@ RSpec.describe "Users", type: :system do
       click_button('登録')
       expect(page).to have_content('ユーザー登録に失敗しました')
     end
-    it 'ユーザー登録に成功' do
+    it '新規登録に成功' do
       visit new_user_path
       fill_in 'user[name]', with: 'abc'
       fill_in 'user[email]', with: 'aaa@bbb'
@@ -31,6 +31,29 @@ RSpec.describe "Users", type: :system do
       fill_in 'password', with: '000000'
       click_button('ログイン')
       expect(page).to have_content('ログインしました')
+    end
+  end
+
+  describe 'ユーザー編集' do
+    let(:user) { create :user }
+    before do
+      visit user_path(user)
+    end
+    context 'ログインユーザー' do
+      it 'ユーザー編集に失敗' do
+        click_link('プロフィール編集')
+        fill_in 'user[name]', with: ""
+        fill_in 'user[email]', with: ""
+        click_button('登録')
+        expect(page).to have_content('ユーザーの編集に失敗しました')
+      end
+      it 'ユーザー編集に成功' do 
+        click_link('プロフィール編集')
+        fill_in 'user[name]', with: "edit"
+        fill_in 'user[email]', with: "edit@bbb"
+        click_button('登録')
+        expect(page).to have_content('ユーザーを編集しました')
+      end
     end
   end
 end
