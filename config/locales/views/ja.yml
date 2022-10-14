@@ -9,3 +9,7 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  movies:
+    show:
+      success: '動画が表示されました'
+      fail: '動画が表示されませんでした'

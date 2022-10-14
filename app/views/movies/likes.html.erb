@@ -1,12 +1,12 @@
 <div class="row row-cols-1 row-cols-md-3 g-4"">
-    <% if @likeslist.present? %>
-        <% @likeslist.each do |result| %>
+    <% if @likes.present? %>
+        <% @likes.each do |result| %>
         <div class="col">
             <div class="card bg-dark text-white bg-opacity-75">
-            <%= image_tag "https://image.tmdb.org/t/p/w1280/#{result["poster_path"]}", class: "card-img" %>
+            <%= image_tag "https://image.tmdb.org/t/p/w1280/#{result.poster_path}", class: "card-img" %>
             <div class="card-body">
-                <p class="card-text"><%= result["original_name"] %></p>
-                <%= link_to "詳細", like_movies_path(movie_id: result["id"]), class: "btn btn-outline-light btn-lg w-100" %>
+                <p class="card-text"><%= result.original_name%></p>
+                <%= link_to "詳細", like_movies_path(movie_id: result.id), class: "btn btn-outline-light btn-lg w-100" %>
             </div>
             </div>
         </div>
