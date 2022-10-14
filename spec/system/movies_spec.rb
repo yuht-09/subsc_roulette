@@ -59,13 +59,14 @@ RSpec.describe "Movies", type: :system do
       let(:login_user) { user_a }
       before do
         allow(TmdbApi).to receive(:like).and_return([movie_1])
+        visit user_path(user_a)
       end
       it 'original_name_33が表示される' do
-        visit likes_path
+        click_link('気になるリスト')
         expect(page).to have_content('original_name_33')
       end
       it 'original_name_34が表示されない' do
-        visit likes_path
+        click_link('気になるリスト')
         expect(page).to have_no_content('original_name_34')
       end
     end
@@ -74,13 +75,14 @@ RSpec.describe "Movies", type: :system do
       let(:login_user) { user_b }
       before do
         allow(TmdbApi).to receive(:like).and_return([movie_2])
+        visit user_path(user_b)
       end
       it 'original_name_34が表示される' do
-        visit likes_path
+        click_link('気になるリスト')
         expect(page).to have_content('original_name_34')
       end
       it 'original_name_33が表示されない' do
-        visit likes_path
+        click_link('気になるリスト')
         expect(page).to have_no_content('original_name_33')
       end
     end
