@@ -37,6 +37,10 @@ RSpec.describe "Users", type: :system do
   describe 'ユーザー編集' do
     let(:user) { create :user }
     before do
+      visit login_path
+      fill_in 'email', with: user.email
+      fill_in 'password', with: '000000'
+      click_button('ログイン')
       visit user_path(user)
     end
     context 'ログインユーザー' do
