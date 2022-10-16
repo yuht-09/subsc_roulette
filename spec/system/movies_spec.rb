@@ -46,8 +46,8 @@ RSpec.describe "Movies", type: :system do
   describe '#likes' do
     let(:user_a) { create :user, name: 'user_1', email: 'aaa@bbb' }
     let(:user_b) { create :user, name: 'user_2', email: 'bbb@ccc' }
-    let(:movie_1) { build :movie, original_name: 'original_name_33' }
-    let(:movie_2) { build :movie, original_name: 'original_name_34' }
+    let(:movie_1) { build :movie, name: 'original_name_33' }
+    let(:movie_2) { build :movie, name: 'original_name_34' }
     before do
       visit login_path
       fill_in 'email', with: login_user.email
@@ -84,6 +84,64 @@ RSpec.describe "Movies", type: :system do
       it 'original_name_33が表示されない' do
         click_link('気になるリスト')
         expect(page).to have_no_content('original_name_33')
+      end
+    end
+  end
+  describe '#like_movie' do
+    let(:user_a) { create :user, name: 'user_1', email: 'aaa@bbb' }
+    let(:user_b) { create :user, name: 'user_2', email: 'bbb@ccc' }
+    let(:movie_1) { build :movie, name: 'original_name_33' }
+    let(:movie_2) { build :movie, name: 'original_name_34' }
+    before do
+      visit login_path
+      fill_in 'email', with: login_user.email
+      fill_in 'password', with: '000000'
+      click_button('ログイン')
+    end
+
+    context 'user_aがログインしている時' do
+      let(:login_user) { user_a }
+      before do
+        allow(TmdbApi).to receive(:like).and_return([movie_1])
+        allow(TmdbApi).to receive(:like_movies).and_return([movie_1])
+        visit user_path(user_a)
+      end
+      it 'original_name_33が表示される' do
+        click_link('気になるリスト')
+        expect(page).to have_content('original_name_33')
+        click_link('詳細')
+        expect(page).to have_content('original_name_33')
+        expect(page).to have_content('気になる')
+      end
+      it 'original_name_34が表示されない' do
+        click_link('気になるリスト')
+        expect(page).to have_no_content('original_name_34')
+        click_link('詳細')
+        expect(page).to have_no_content('original_name_34')
+        expect(page).to have_content('気になる')
+      end
+    end
+    
+    context 'user_bがログインしている時' do
+      let(:login_user) { user_b }
+      before do
+        allow(TmdbApi).to receive(:like).and_return([movie_2])
+        allow(TmdbApi).to receive(:like_movies).and_return([movie_2])
+        visit user_path(user_b)
+      end
+      it 'original_name_34が表示される' do
+        click_link('気になるリスト')
+        expect(page).to have_content('original_name_34')
+        click_link('詳細')
+        expect(page).to have_content('original_name_34')
+        expect(page).to have_content('気になる')
+      end
+      it 'original_name_33が表示されない' do
+        click_link('気になるリスト')
+        expect(page).to have_no_content('original_name_33')
+        click_link('詳細')
+        expect(page).to have_no_content('original_name_33')
+        expect(page).to have_content('気になる')
       end
     end
   end

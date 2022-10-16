@@ -60,5 +60,9 @@ class Movie
     def like(params)
       TmdbApi.like(params)
     end
+
+    def like_movies(params)
+      TmdbApi.like_movies(params)
+    end
   end
 end

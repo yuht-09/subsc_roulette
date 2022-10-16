@@ -14,10 +14,7 @@ class MoviesController < ApplicationController
   end
 
   def like_movies
-    @movie_id = params[:movie_id].to_i
-    uri = URI.parse("https://api.themoviedb.org/3/tv/#{@movie_id}?api_key=#{ENV['API_KEY']}&language=ja-JP")
-    json = Net::HTTP.get(uri)
-    result = JSON.parse(json)
-    @like_movies = result
+    @movie_id = params[:movie_id]
+    @like_movies = TmdbApi.like_movies(params).first
   end
 end
