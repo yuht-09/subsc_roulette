@@ -4,7 +4,6 @@ FactoryBot.define do
     sequence(:name) { |n| "name_#{n}" }
     sequence(:overview) { |n| "overview_#{n}" }
     poster_path { 'goKUd5y4lHU3qkW0XKKxmNSNcem.jpg' }
-    #backdrop_path { 'goKUd5y4lHU3qkW0XKKxmNSNcem.jpg' }
     sequence(:first_air_date) { |n| "first_air_date_#{n}" }
     sequence(:genre_ids) { |n| n }
     sequence(:origin_country) { |n| "origin_country_#{n}" }
