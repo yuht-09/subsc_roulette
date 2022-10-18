@@ -44,8 +44,8 @@ RSpec.describe "Movies", type: :system do
   end
 
   describe '#likes' do
-    let(:user_1) { create :user, name: 'user_1', email: 'aaa@bbb' }
-    let(:user_2) { create :user, name: 'user_2', email: 'bbb@ccc' }
+    let(:user_1) { create :user, name: 'user_1', email: '1@gmail.com' }
+    let(:user_2) { create :user, name: 'user_2', email: '2@gmail.com' }
     let(:movie_1) { build :movie, name: 'original_name_33' }
     let(:movie_2) { build :movie, name: 'original_name_34' }
     before do
@@ -88,8 +88,8 @@ RSpec.describe "Movies", type: :system do
     end
   end
   describe '#like_movie' do
-    let(:user_1) { create :user, name: 'user_1', email: 'aaa@bbb' }
-    let(:user_2) { create :user, name: 'user_2', email: 'bbb@ccc' }
+    let(:user_1) { create :user, name: 'user_1', email: '1@gmail.com' }
+    let(:user_2) { create :user, name: 'user_2', email: '2@gmail.com' }
     let(:movie_1) { build :movie, name: 'original_name_33' }
     let(:movie_2) { build :movie, name: 'original_name_34' }
     before do

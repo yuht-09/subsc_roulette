@@ -9,8 +9,8 @@ RSpec.describe "Users", type: :system do
     end
     it '新規登録に成功' do
       visit new_user_path
-      fill_in 'user[name]', with: 'abc'
-      fill_in 'user[email]', with: 'aaa@bbb'
+      fill_in 'user[name]', with: 'user_1'
+      fill_in 'user[email]', with: '1@gmail.com'
       fill_in 'user[password]', with: '000000'
       fill_in 'user[password_confirmation]', with: '000000'
       click_button('登録')
@@ -53,8 +53,8 @@ RSpec.describe "Users", type: :system do
       end
       it 'ユーザー編集に成功' do 
         click_link('プロフィール編集')
-        fill_in 'user[name]', with: "edit"
-        fill_in 'user[email]', with: "edit@bbb"
+        fill_in 'user[name]', with: "user_2"
+        fill_in 'user[email]', with: "2@gmail.com"
         click_button('登録')
         expect(page).to have_content('ユーザーを編集しました')
       end
