@@ -46,8 +46,8 @@ RSpec.describe "Movies", type: :system do
   describe '#likes' do
     let(:user_1) { create :user, name: 'user_1', email: '1@gmail.com' }
     let(:user_2) { create :user, name: 'user_2', email: '2@gmail.com' }
-    let(:movie_1) { build :movie, name: 'original_name_33' }
-    let(:movie_2) { build :movie, name: 'original_name_34' }
+    let(:movie_1) { build :movie, name: 'ワンピース', poster_path: 'goKUd5y4lHU3qkW0XKKxmNSNcem.jpg' }
+    let(:movie_2) { build :movie, name: 'ストレンジャーシングス', poster_path: 'kyXBjSIfePi1AKvwjkn0wuCAPTq.jpg' }
     before do
       visit login_path
       fill_in 'email', with: login_user.email
@@ -61,13 +61,13 @@ RSpec.describe "Movies", type: :system do
         allow(TmdbApi).to receive(:like).and_return([movie_1])
         visit user_path(user_1)
       end
-      it 'original_name_33が表示される' do
+      it 'ワンピースが表示される' do
         click_link('気になるリスト')
-        expect(page).to have_content('original_name_33')
+        expect(page).to have_content('ワンピース')
       end
-      it 'original_name_34が表示されない' do
+      it 'ストレンジャーシングスが表示されない' do
         click_link('気になるリスト')
-        expect(page).to have_no_content('original_name_34')
+        expect(page).to have_no_content('ストレンジャーシングス')
       end
     end
     
@@ -77,21 +77,21 @@ RSpec.describe "Movies", type: :system do
         allow(TmdbApi).to receive(:like).and_return([movie_2])
         visit user_path(user_2)
       end
-      it 'original_name_34が表示される' do
+      it 'ストレンジャーシングスが表示される' do
         click_link('気になるリスト')
-        expect(page).to have_content('original_name_34')
+        expect(page).to have_content('ストレンジャーシングス')
       end
-      it 'original_name_33が表示されない' do
+      it 'ワンピースが表示されない' do
         click_link('気になるリスト')
-        expect(page).to have_no_content('original_name_33')
+        expect(page).to have_no_content('ワンピース')
       end
     end
   end
   describe '#like_movie' do
     let(:user_1) { create :user, name: 'user_1', email: '1@gmail.com' }
     let(:user_2) { create :user, name: 'user_2', email: '2@gmail.com' }
-    let(:movie_1) { build :movie, name: 'original_name_33' }
-    let(:movie_2) { build :movie, name: 'original_name_34' }
+    let(:movie_1) { build :movie, name: 'ワンピース', poster_path: 'goKUd5y4lHU3qkW0XKKxmNSNcem.jpg' }
+    let(:movie_2) { build :movie, name: 'ストレンジャーシングス', poster_path: 'kyXBjSIfePi1AKvwjkn0wuCAPTq.jpg' }
     before do
       visit login_path
       fill_in 'email', with: login_user.email
@@ -106,18 +106,18 @@ RSpec.describe "Movies", type: :system do
         allow(TmdbApi).to receive(:like_movies).and_return([movie_1])
         visit user_path(user_1)
       end
-      it 'original_name_33が表示される' do
+      it 'ワンピースが表示される' do
         click_link('気になるリスト')
-        expect(page).to have_content('original_name_33')
+        expect(page).to have_content('ワンピース')
         click_link('詳細')
-        expect(page).to have_content('original_name_33')
+        expect(page).to have_content('ワンピース')
         expect(page).to have_content('気になる')
       end
-      it 'original_name_34が表示されない' do
+      it 'ストレンジャーシングスが表示されない' do
         click_link('気になるリスト')
-        expect(page).to have_no_content('original_name_34')
+        expect(page).to have_no_content('ストレンジャーシングス')
         click_link('詳細')
-        expect(page).to have_no_content('original_name_34')
+        expect(page).to have_no_content('ストレンジャーシングス')
         expect(page).to have_content('気になる')
       end
     end
@@ -129,18 +129,18 @@ RSpec.describe "Movies", type: :system do
         allow(TmdbApi).to receive(:like_movies).and_return([movie_2])
         visit user_path(user_2)
       end
-      it 'original_name_34が表示される' do
+      it 'ストレンジャーシングスが表示される' do
         click_link('気になるリスト')
-        expect(page).to have_content('original_name_34')
+        expect(page).to have_content('ストレンジャーシングス')
         click_link('詳細')
-        expect(page).to have_content('original_name_34')
+        expect(page).to have_content('ストレンジャーシングス')
         expect(page).to have_content('気になる')
       end
-      it 'original_name_33が表示されない' do
+      it 'ワンピースが表示されない' do
         click_link('気になるリスト')
-        expect(page).to have_no_content('original_name_33')
+        expect(page).to have_no_content('ワンピース')
         click_link('詳細')
-        expect(page).to have_no_content('original_name_33')
+        expect(page).to have_no_content('ワンピース')
         expect(page).to have_content('気になる')
       end
     end
