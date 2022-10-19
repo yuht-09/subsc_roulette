@@ -18,17 +18,18 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path
+      redirect_to login_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user), success: 'ユーザーを登録しました'
+      redirect_to user_path(@user), success: 'ユーザーを編集しました'
     else
-      flash.now[:danger] = 'ユーザーの登録に失敗しました'
+      flash.now[:danger] = 'ユーザーの編集に失敗しました'
       render :edit
     end
   end
