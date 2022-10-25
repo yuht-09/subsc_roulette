@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="row mt-5 p-5">
-    <div class="mt-5 p-5 text-center">
-        <div class="d-flex justify-content-around my-5">
-          <p class="col-4 me-3"><%= link_to "Netflix", netflix_path, class: "btn btn-outline-danger btn-lg w-100" %></p>
-          <p class="col-4 me-3"><%= link_to "Hulu", hulu_path, class: "btn btn-outline-success btn-lg w-100" %></p>
-        </div>
+  <div class="row mt-5 p-5">  
+    <div class="col-md-6">
+      <%= link_to "Netflix", netflix_path, class: "btn btn-outline-danger btn-lg w-100 mt-5" %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to "Hulu", hulu_path, class: "btn btn-outline-success btn-lg w-100 mt-5" %>
     </div>
   </div>
 </div>

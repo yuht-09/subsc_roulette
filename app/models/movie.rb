@@ -52,6 +52,12 @@ class Movie
   attribute :vote_count, :integer
   attribute :production_countries, :string
 
+  Netflix = "213"
+  Hulu = "1772"
+  Genre_Tension = "35"
+  Genre_Chill = "10751|16"
+  Genre_Exciting = "9648|10764|10759|10765"
+
   class << self
     def all(params)
       TmdbApi.all(params)
