@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サービス概要
+・Netflix、Huluの使用している方どちらかを選択し、更にシチュエーション（テンション上げたい、チルしたい、ハラハラしたい）を選択し、その中からランダムで映画を選んでくれるアプリ。
+## ターゲット
+・Netflix、Huluなどのサブスクを暇つぶしに使用したい時に、見たいものが決まっておらず、数多くの作品の中から選択するのが面倒な人向け。
+## サービス詳細
+　　・＊ユーザー
+　　　　①ユーザーは、NetflixかHuluか選択する。
+　　　　②次に、映画を見たいシチュエーションを選択する。『テンション上げたい　　　　　　時』、『寝る前に』など。
+　　　　③シチュエーションを選択したら、ランダムでそのシチュエーションに合った映　　　　画が出てくる。
+　　　　④ユーザー登録者は、お気に入り機能を使ってランダムで出てきた映画を保存す　　　　ることが出来る。
 
-Things you may want to cover:
+　　　＊管理者画面
+　　　　①管理者画面では、APIから取得してきたシチュエーション（下記に説明）毎の　　　　映画の一覧を確認できるようにしたい。
+　　　　②管理者がタイトル、ジャンルを検索して作成したシチュエーションに追加する　　　　機能をつける。（APIから取得した各サービスのジャンルごと追加する機能、タ　　　　イトル検索しその映画を追加する機能をつける。
+　　　　③管理者が、各シチュエーションの映画一覧から映画を選定（削除機能）できる　　　　ようにする。
 
-* Ruby version
 
-* System dependencies
+　　　　『シチュエーション』・・・APIから取得した映画のジャンル（アクション、ホ　　　　ラー、コメディ、など）を合わせたもの。例：『テンション上げたい時』　　　　　　　→APIから取得した「Netflixの全アクション」＋「Netflixの全コメディ」
+　　　　『寝る前に』→APIから取得したサブスクのジャンル「Netflixの全ロマンス」＋　　　　「Netflixの全ファミリー」
 
-* Configuration
+　　　　
+## 機能一覧
+・ユーザー登録機能
+・お気に入り機能（ランダムで選択された映画の画面に『見たい』ボタンがあ　りユーザー画面で『見たい映画一覧』で確認できるようにしたいです）
+・管理者機能
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
