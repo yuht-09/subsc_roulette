@@ -20,6 +20,10 @@
 ④ユーザー登録者は、気になる機能を使ってランダムで出てきたドラマを保存することが出来る。
 <img width="1440" alt="スクリーンショット 2022-10-27 21 34 43" src="https://user-images.githubusercontent.com/87309077/198302946-30fe9929-e419-4aad-89f7-f96084057297.png">
 
+※ゲストユーザーは気になるボタンは表示されません。
+<img width="1440" alt="スクリーンショット 2022-10-28 0 37 00" src="https://user-images.githubusercontent.com/87309077/198334993-48983af0-95ea-4b65-bdc8-dc1b034249d3.png">
+
+
 ### ユーザー画面から気になるを表示
 ![ポートフォリオ](https://user-images.githubusercontent.com/87309077/198318505-c07d2576-3d02-42b8-b7b3-780131ad3ede.gif)
 
