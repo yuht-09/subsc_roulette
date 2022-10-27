@@ -5,7 +5,8 @@
 ## ターゲット
 ・Netflix、Huluなどのサブスクを暇つぶしに使用したい時に、見たいものが決まっておらず、数多くの作品の中から選択するのが面倒な人向け。
 ## サービス詳細
-　　・ユーザー
+### ユーザー
+  
 ①ユーザーは、NetflixかHuluか選択する。
 <img width="1440" alt="スクリーンショット 2022-10-27 21 26 49" src="https://user-images.githubusercontent.com/87309077/198302278-bdec9f23-f64e-4b77-8f4b-955d03471afc.png">
 
@@ -19,7 +20,7 @@
 ④ユーザー登録者は、お気に入り機能を使ってランダムで出てきた映画を保存することが出来る。
 <img width="1440" alt="スクリーンショット 2022-10-27 21 34 43" src="https://user-images.githubusercontent.com/87309077/198302946-30fe9929-e419-4aad-89f7-f96084057297.png">
 
-## ユーザー画面
+### ユーザー画面
 ![ポートフォリオ](https://user-images.githubusercontent.com/87309077/198318505-c07d2576-3d02-42b8-b7b3-780131ad3ede.gif)
 
 
