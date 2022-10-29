@@ -11,7 +11,7 @@
 <img width="1440" alt="スクリーンショット 2022-10-27 21 26 49" src="https://user-images.githubusercontent.com/87309077/198302278-bdec9f23-f64e-4b77-8f4b-955d03471afc.png">
 
 ②次に、シチュエーションを選択する。『テンション上げたい』、『チルした』、『ハラハラしたい』。
-<img width="1440" alt="スクリーンショット 2022-10-27 21 27 13" src="https://user-images.githubusercontent.com/87309077/198302654-421fbb56-9dcf-4d01-b044-2d62a7a67d1c.png">
+<img width="1440" alt="スクリーンショット 2022-10-29 16 52 02" src="https://user-images.githubusercontent.com/87309077/198820451-bcf9c3b7-d023-44e2-b44f-b6e07b73b66c.png">
 
 ③シチュエーションを選択したら、ランダムでそのシチュエーションに合ったドラマが出てくる。
 <img width="1440" alt="スクリーンショット 2022-10-27 21 34 31" src="https://user-images.githubusercontent.com/87309077/198302794-c59bb6fa-3edc-404c-947f-2f08167d2e5f.png">
