@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
 
-  def index
-    @users = User.all
-  end
-
   def show
   end
 
@@ -27,9 +23,9 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user), success: 'ユーザーを編集しました'
+      redirect_to user_path(@user), success: t('.success')
     else
-      flash.now[:danger] = 'ユーザーの編集に失敗しました'
+      flash.now[:danger] = t('.fail')
       render :edit
     end
   end
