@@ -28,8 +28,15 @@
 ![ポートフォリオ](https://user-images.githubusercontent.com/87309077/198318505-c07d2576-3d02-42b8-b7b3-780131ad3ede.gif)
 
 ## 機能一覧
+
 ・ユーザー登録機能
+
 ・ランダムでドラマを表示する機能
+
 ・気になる機能（ランダムで選択された映画の画面に『気になる』ボタンがあ　りユーザー画面で『気になる一覧』で確認できるようにできる）
+
+## ER図
+
+https://drive.google.com/file/d/13eJm2EwvmYOIP9aXZTocILPWTaclgP87/view?usp=sharing
 
 
