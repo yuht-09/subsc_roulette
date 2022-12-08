@@ -17,6 +17,6 @@ class MoviesController < ApplicationController
     @movie_id = params[:movie_id]
     @like_movies = TmdbApi.like_movies(params).first
     @comment = Comment.new
-    @coments = Comment.where(movie_id: @movie_id).order(created_at: :desc)
+    @comments = Comment.where(movie_id: @movie_id).order(created_at: :desc)
   end
 end

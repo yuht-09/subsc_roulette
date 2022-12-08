@@ -16,23 +16,10 @@
                 <%= render partial: 'likes/like', locals: { user_id: current_user.id, movie_id: @movie_id } %>
               </div>
             </div>
-            <%= render 'comments/form' %>
-            
-            <% @coments.each do |result| %>
-                <div class="col">
-                <div class="card bg-dark text-white bg-opacity-75">
-            
-                <div class="card-body">
-                    <p class="card-text"><%= result.body%></p>
-                    
-                </div>
-                </div>
-                
-                </div>
-            <% end %>
           </div>
         </div>
       </div>
-    </div>    
+    </div>
+    <%= render 'comments/form' %>
   </div>
 </div>

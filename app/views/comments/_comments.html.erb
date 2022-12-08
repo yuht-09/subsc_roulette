@@ -1,0 +1,7 @@
+<% comments.each do |comment| %>
+  <div class="card bg-dark text-white bg-opacity-75 mb-1">
+    <div class="card-body">
+        <p class="card-text"><small><%= simple_format comment.body %></small></p>
+    </div>
+  </div>
+<% end %>
