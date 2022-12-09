@@ -20,6 +20,12 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>  
+    <div class="col-12 sidebar comments">
+      <h2 class="bg-secondary text-center">コメント一覧</h2>
+    </div>  
+    <div class="col-12 sidebar comments">
+      <%= render 'comments/comments', comments: @comments %>
+    </div>  
   </div>
 </div>

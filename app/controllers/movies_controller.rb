@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
     @movie_id = @movies.id
+    @comments = Comment.where(movie_id: @movie_id).includes(:user).order(created_at: :desc)
   end
 
   def likes
@@ -17,6 +18,6 @@ class MoviesController < ApplicationController
     @movie_id = params[:movie_id]
     @like_movies = TmdbApi.like_movies(params).first
     @comment = Comment.new
-    @comments = Comment.where(movie_id: @movie_id).order(created_at: :desc)
+    @comments = Comment.where(movie_id: @movie_id).includes(:user).order(created_at: :desc)
   end
 end
