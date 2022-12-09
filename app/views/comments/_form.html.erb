@@ -6,7 +6,11 @@
       </button>
     </div>
     <div class="col-12 sidebar comments">
-      <%= render 'comments/comments', comments: @comments %>
+      <% if @comments.present? %>
+        <%= render 'comments/comments', comments: @comments %>
+      <% else %>
+        <p>現在コメントはありません</p>
+      <% end %>
     </div>
   </div>
 </div> 
