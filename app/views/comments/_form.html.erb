@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-outline-light btn-lg w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        コメントする
+      </button>
+    </div>
+    <div class="col-12 sidebar comments">
+      <% if @comments.present? %>
+        <%= render 'comments/comments', comments: @comments %>
+      <% else %>
+        <p>現在コメントはありません</p>
+      <% end %>
+    </div>
+  </div>
+</div> 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-black" id="exampleModalLabel">感想を書いてみよう！</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= form_with model: @comment, remote: true do |f| %>
+        <div class="modal-body">
+            <div class="form-group">
+            <%= f.label :body, "コメント" %>
+            <%= f.text_area :body, class:"form-control" %>
+            <%= hidden_field_tag :movie_id, @movie_id %>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+            <%= f.submit "投稿する", class:"btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

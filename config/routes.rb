@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'netflix', to: 'movies#netflix'
   get 'hulu', to: 'movies#hulu'
 
+  resources :comments, only: %i[create]
+
   resources :movies do
     resource :likes, only: [:create, :destroy]
   end
