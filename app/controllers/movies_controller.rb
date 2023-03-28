@@ -11,12 +11,12 @@ class MoviesController < ApplicationController
   end
 
   def likes
-    @likes = TmdbApi.like(params)
+    @likes = Movie.like(params)
   end
 
   def like_movies
     @movie_id = params[:movie_id]
-    @like_movies = TmdbApi.like_movies(params).first
+    @like_movies = Movie.like_movies(params).first
     @comment = Comment.new
     @comments = Comment.where(movie_id: @movie_id).includes(:user).order(created_at: :desc)
   end
