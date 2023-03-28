@@ -9,6 +9,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% if Rails.env.production? %>
+      <%= render 'layouts/google_analytics' %>
+    <% end %>
   </head>
 
   <body class="bg-dark text-white bg-opacity-75">
