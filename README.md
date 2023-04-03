@@ -28,7 +28,7 @@
 ### ユーザー画面から気になるを表示
 ![ポートフォリオ](https://user-images.githubusercontent.com/87309077/198318505-c07d2576-3d02-42b8-b7b3-780131ad3ede.gif)
 
-コメント機能
+### コメント機能
 <img width="1440" alt="スクリーンショット 2023-04-04 2 48 33" src="https://user-images.githubusercontent.com/87309077/229588922-02ee33ec-9be5-467e-8498-611f233e2154.png">
 
 ## 機能一覧
